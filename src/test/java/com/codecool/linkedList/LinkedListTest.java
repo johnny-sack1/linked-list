@@ -30,7 +30,15 @@ public class LinkedListTest {
     void insertTest() {
         LinkedList list = createLinkedListWithAlphabet();
         list.insert(5, 'A');
-        String result = " A B C D E F A G H I J K L M N O P Q R S T U V W X Y Z";
+        String result = " A B C D E A F G H I J K L M N O P Q R S T U V W X Y Z";
+        assertEquals(result, list.toString());
+    }
+
+    @Test
+    void removeTest() {
+        LinkedList list = createLinkedListWithAlphabet();
+        list.remove(5);
+        String result = " A B C D E G H I J K L M N O P Q R S T U V W X Y Z";
         assertEquals(result, list.toString());
     }
 

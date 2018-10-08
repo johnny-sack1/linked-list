@@ -41,13 +41,23 @@ public class LinkedList {
         Node current = head;
 
         if (current != null) {
-            for (int i = 0; i < index; i++) {
+            for (int i = 1; i < index; i++) {
                 current = current.getNext();
             }
         }
         newNode.setNext(current.getNext());
         current.setNext(newNode);
-        length++;
+        this.length++;
+    }
+
+    public void remove(int index) {
+        Node current = head;
+
+        for (int i = 1; i < index; i++) {
+            current = current.getNext();
+        }
+        current.setNext(current.getNext().getNext());
+        this.length--;
     }
 
     public Object getHead() {
