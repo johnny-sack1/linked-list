@@ -20,4 +20,9 @@ public class Node {
     public Object getData() {
         return this.data;
     }
+
+    @Override
+    public String toString() {
+        return getData().toString();
+    }
 }
