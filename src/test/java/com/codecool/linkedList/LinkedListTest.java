@@ -26,6 +26,14 @@ public class LinkedListTest {
         assertEquals(result, list.length());
     }
 
+    @Test
+    void insertTest() {
+        LinkedList list = createLinkedListWithAlphabet();
+        list.insert(5, 'A');
+        String result = " A B C D E F A G H I J K L M N O P Q R S T U V W X Y Z";
+        assertEquals(result, list.toString());
+    }
+
     private LinkedList createLinkedListWithAlphabet() {
         LinkedList list = new LinkedList();
         for (int i = 65; i <= 90; i++) {

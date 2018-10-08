@@ -8,11 +8,10 @@ public class LinkedList {
         if (head == null) {
             head = new Node(data);
         }
+        else {
+            Node newNode = new Node(data);
+            Node current = head;
 
-        Node newNode = new Node(data);
-        Node current = head;
-
-        if (current != null) {
             while (current.getNext() != null) {
                 current = current.getNext();
             }
@@ -26,7 +25,7 @@ public class LinkedList {
 
         if (head != null) {
             current = head.getNext();
-            for (int i = 0; i < index; i++) {
+            for (int i = 1; i < index; i++) {
                 if (current.getNext() == null) {
                     return null;
                 }
@@ -35,6 +34,20 @@ public class LinkedList {
             return current.getData();
         }
         return current;
+    }
+
+    public void insert(int index, Object data) {
+        Node newNode = new Node(data);
+        Node current = head;
+
+        if (current != null) {
+            for (int i = 0; i < index; i++) {
+                current = current.getNext();
+            }
+        }
+        newNode.setNext(current.getNext());
+        current.setNext(newNode);
+        length++;
     }
 
     public Object getHead() {
@@ -47,5 +60,21 @@ public class LinkedList {
 
     public int length() {
         return this.length;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+
+        Node current;
+        if (head != null) {
+            builder.append(" " + head.getData().toString());
+            current = head;
+            while (current.getNext() != null) {
+                current = current.getNext();
+                builder.append(" " + current.getData().toString());
+            }
+        }
+        return builder.toString();
     }
 }
