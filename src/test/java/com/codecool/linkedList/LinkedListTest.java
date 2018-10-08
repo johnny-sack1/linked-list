@@ -9,7 +9,14 @@ public class LinkedListTest {
     void headTest() {
         LinkedList list = createLinkedListWithAlphabet();
         char result = 'A';
-        assertEquals(result, list.getHead().getData());
+        assertEquals(result, list.getHead());
+    }
+
+    @Test
+    void tailTest() {
+        LinkedList list = createLinkedListWithAlphabet();
+        char result = 'Z';
+        assertEquals(result, list.getTail());
     }
 
     private LinkedList createLinkedListWithAlphabet() {
