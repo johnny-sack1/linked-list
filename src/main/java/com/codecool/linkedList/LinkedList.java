@@ -44,4 +44,8 @@ public class LinkedList {
     public Object getTail() {
         return get(this.length - 1);
     }
+
+    public int length() {
+        return this.length;
+    }
 }

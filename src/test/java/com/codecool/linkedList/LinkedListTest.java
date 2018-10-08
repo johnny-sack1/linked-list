@@ -19,6 +19,13 @@ public class LinkedListTest {
         assertEquals(result, list.getTail());
     }
 
+    @Test
+    void lengthTest() {
+        LinkedList list = createLinkedListWithAlphabet();
+        int result = 26;
+        assertEquals(result, list.length());
+    }
+
     private LinkedList createLinkedListWithAlphabet() {
         LinkedList list = new LinkedList();
         for (int i = 65; i <= 90; i++) {
